@@ -16,11 +16,13 @@ class downloader():
 		self.filenames.append(filename) 
 	
 	def downloadFile(self, r, idx, path=os.getcwd()):
+		#TODO 判断异常（路径、是否已经存在...）
 		with open(os.getcwd() +r'\\' + self.filenames[idx], 'wb') as f:
 			f.write(r.content)
 
 	
 def proto_download():
+	#TODO 加进度条，可视化下载过程
 	counter = 0
 	dwnldr = downloader()
 	with open("download.txt") as f:
